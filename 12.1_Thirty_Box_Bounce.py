@@ -40,9 +40,9 @@ class Box:
         self.speed_x = speed_x
         self.speed_y = speed_y
         if self.speed_x == 0:
-            self.speed_x = 1
+            self.speed_x = random.randint(2, 6)
         elif self.speed_y == 0:
-            self.speed_y = 1
+            self.speed_y = random.randint(2, 6)
 
     def box_draw(self):
         arcade.draw_rectangle_filled(self.x, self.y, self.wx, self.wy, self.color)  # draw each box
