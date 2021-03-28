@@ -83,7 +83,6 @@ class Render(arcade.Window):
         for i in range(30):
             self.box_list.append(Box(random.randint(100, 500), random.randint(100, 500), random.randint(10, 50),
                                      random.randint(-10, 10), random.randint(-10, 10)))
-        # self.box_1 = Box(100, 200, 25, 2, 2)
 
     def on_draw(self):
         arcade.start_render()
