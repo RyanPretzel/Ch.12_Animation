@@ -47,10 +47,6 @@ class Box:
     def box_draw(self):
         arcade.draw_rectangle_filled(self.x, self.y, self.wx, self.wy, self.color)  # draw each box
         # draw the walls
-        arcade.draw_rectangle_filled(15, screen_height / 2, 30, screen_height - 60, arcade.color.BLUE)
-        arcade.draw_rectangle_filled(screen_width / 2, 15, screen_width - 60, 30, arcade.color.LIME_GREEN)
-        arcade.draw_rectangle_filled(screen_width - 15, screen_height / 2, 30, screen_height - 60, arcade.color.YELLOW)
-        arcade.draw_rectangle_filled(screen_width / 2, screen_height - 15, screen_width - 60, 30, arcade.color.RED)
 
     def update_box(self):
         self.x += self.speed_x
@@ -86,6 +82,12 @@ class Render(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
+
+        arcade.draw_rectangle_filled(15, screen_height / 2, 30, screen_height - 60, arcade.color.BLUE)
+        arcade.draw_rectangle_filled(screen_width / 2, 15, screen_width - 60, 30, arcade.color.LIME_GREEN)
+        arcade.draw_rectangle_filled(screen_width - 15, screen_height / 2, 30, screen_height - 60, arcade.color.YELLOW)
+        arcade.draw_rectangle_filled(screen_width / 2, screen_height - 15, screen_width - 60, 30, arcade.color.RED)
+
         for i in range(len(self.box_list)):     # for every box in the list
             self.box_list[i].box_draw()         # draw each box
 
